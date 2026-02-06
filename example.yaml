@@ -1,0 +1,12 @@
+Project1:
+  Name: example_RNA
+  Type: RNA
+  P5: P1.05
+  P7: P2.04 
+  N6: T # T or F, based on if you added random primer during RT
+Project2:
+  Name: example_TAPS
+  Type: TAPS
+  P5: P1.04
+  P7: P2.04
+ 
