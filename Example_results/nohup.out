@@ -1,0 +1,650 @@
+the number of projects is 2
+Running full pipeline
+Skip bcltofastq
+Detected 1 lanes
+Run number is: Undetermined
+Link fastqs
+Split fastqs to small files
+Update index and trim fastqs
+0 sucessfully demultiplexed for /mnt/users/bohan/scripts/Github/Example/fastqs/Sub.0002.1.
+Warning too few reads
+27502 sucessfully demultiplexed for /mnt/users/bohan/scripts/Github/Example/fastqs/Sub.0001.1.
+11% reads demultiplexed
+Merge fastqs
+Generated example_RNA.R1.fastq.gz
+Generated example_RNA.R2.fastq.gz
+Generated example_DNA.R1.fastq.gz
+Generated example_DNA.R2.fastq.gz
+example_RNA
+/mnt/users/bohan/scripts/Github/Example
+mm10
+process RNA part
+working dir is: /mnt/users/bohan/scripts/Github/Example/example_RNA
+Using an excessive number of cores has a diminishing return! It is recommended not to exceed 8 cores per trimming process (you asked for 8 cores). Please consider re-specifying
+Path to Cutadapt set as: 'cutadapt' (default)
+Cutadapt seems to be working fine (tested command 'cutadapt --version')
+Cutadapt version: 4.1
+Could not detect version of Python used by Cutadapt from the first line of Cutadapt (but found this: >>>#!/bin/sh<<<)
+Letting the (modified) Cutadapt deal with the Python version instead
+pigz 2.6
+Parallel gzip (pigz) detected. Proceeding with multicore (de)compression using 8 cores
+
+No quality encoding type selected. Assuming that the data provided uses Sanger encoded Phred scores (default)
+
+Output will be written into the directory: /mnt/users/bohan/scripts/Github/Example/example_RNA/trimmed/
+
+
+AUTO-DETECTING ADAPTER TYPE
+===========================
+Attempting to auto-detect adapter type from the first 1 million sequences of the first file (>> /mnt/users/bohan/scripts/Github/Example/fastqs/example_RNA.R1.fastq.gz <<)
+
+Found perfect matches for the following adapter sequences:
+Adapter type	Count	Sequence	Sequences analysed	Percentage
+Nextera	27	CTGTCTCTTATA	10443	0.26
+smallRNA	0	TGGAATTCTCGG	10443	0.00
+Illumina	0	AGATCGGAAGAGC	10443	0.00
+Using Nextera adapter for trimming (count: 27). Second best hit was smallRNA (count: 0)
+
+Writing report to '/mnt/users/bohan/scripts/Github/Example/example_RNA/trimmed/example_RNA.R1.fastq.gz_trimming_report.txt'
+
+SUMMARISING RUN PARAMETERS
+==========================
+Input filename: /mnt/users/bohan/scripts/Github/Example/fastqs/example_RNA.R1.fastq.gz
+Trimming mode: single-end
+Trim Galore version: 0.6.7
+Cutadapt version: 4.1
+Python version: could not detect
+Number of cores used for trimming: 8
+Quality Phred score cutoff: 20
+Quality encoding type selected: ASCII+33
+Adapter sequence: 'CTGTCTCTTATA' (Nextera Transposase sequence; auto-detected)
+Maximum trimming error rate: 0.1 (default)
+Minimum required adapter overlap (stringency): 1 bp
+Minimum required sequence length before a sequence gets removed: 20 bp
+Running FastQC on the data once trimming has completed
+Output file(s) will be GZIP compressed
+
+Cutadapt seems to be fairly up-to-date (version 4.1). Setting -j 8
+Writing final adapter and quality trimmed output to example_RNA.R1_trimmed.fq.gz
+
+
+  >>> Now performing quality (cutoff '-q 20') and adapter trimming in a single pass for the adapter sequence: 'CTGTCTCTTATA' from file /mnt/users/bohan/scripts/Github/Example/fastqs/example_RNA.R1.fastq.gz <<< 
+This is cutadapt 4.1 with Python 3.9.6
+Command line parameters: -j 8 -e 0.1 -q 20 -O 1 -a CTGTCTCTTATA /mnt/users/bohan/scripts/Github/Example/fastqs/example_RNA.R1.fastq.gz
+Processing single-end reads on 8 cores ...
+Finished in 0.15 s (14 µs/read; 4.25 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                  10,443
+Reads with adapters:                     3,095 (29.6%)
+Reads written (passing filters):        10,443 (100.0%)
+
+Total basepairs processed:       522,150 bp
+Quality-trimmed:                     312 bp (0.1%)
+Total written (filtered):        516,588 bp (98.9%)
+
+=== Adapter 1 ===
+
+Sequence: CTGTCTCTTATA; Type: regular 3'; Length: 12; Trimmed: 3095 times
+
+Minimum overlap: 1
+No. of allowed errors:
+1-9 bp: 0; 10-12 bp: 1
+
+Bases preceding removed adapters:
+  A: 22.3%
+  C: 24.9%
+  G: 26.4%
+  T: 26.5%
+  none/other: 0.0%
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+1	2168	2610.8	0	2168
+2	626	652.7	0	626
+3	196	163.2	0	196
+4	48	40.8	0	48
+5	8	10.2	0	8
+6	7	2.5	0	7
+7	3	0.6	0	3
+8	4	0.2	0	4
+9	1	0.0	0	1
+10	3	0.0	1	2 1
+11	3	0.0	1	3
+12	1	0.0	1	1
+13	4	0.0	1	4
+14	1	0.0	1	1
+16	1	0.0	1	1
+19	2	0.0	1	1 1
+26	2	0.0	1	2
+30	1	0.0	1	1
+31	1	0.0	1	1
+33	2	0.0	1	2
+36	2	0.0	1	2
+38	2	0.0	1	2
+40	1	0.0	1	1
+41	3	0.0	1	3
+42	2	0.0	1	2
+44	2	0.0	1	2
+49	1	0.0	1	1
+
+RUN STATISTICS FOR INPUT FILE: /mnt/users/bohan/scripts/Github/Example/fastqs/example_RNA.R1.fastq.gz
+=============================================
+10443 sequences processed in total
+Sequences removed because they became shorter than the length cutoff of 20 bp:	16 (0.2%)
+
+
+  >>> Now running FastQC on the data <<<
+
+Started analysis of example_RNA.R1_trimmed.fq.gz
+Approx 5% complete for example_RNA.R1_trimmed.fq.gz
+Approx 15% complete for example_RNA.R1_trimmed.fq.gz
+Approx 25% complete for example_RNA.R1_trimmed.fq.gz
+Approx 35% complete for example_RNA.R1_trimmed.fq.gz
+Approx 45% complete for example_RNA.R1_trimmed.fq.gz
+Approx 55% complete for example_RNA.R1_trimmed.fq.gz
+Approx 65% complete for example_RNA.R1_trimmed.fq.gz
+Approx 75% complete for example_RNA.R1_trimmed.fq.gz
+Approx 85% complete for example_RNA.R1_trimmed.fq.gz
+Approx 95% complete for example_RNA.R1_trimmed.fq.gz
+Analysis complete for example_RNA.R1_trimmed.fq.gz
+Feb 06 09:49:16 ..... started STAR run
+Feb 06 09:49:16 ..... loading genome
+Feb 06 09:49:33 ..... started mapping
+Feb 06 09:49:38 ..... finished successfully
+Add PT tag to label N6
+Sort example_RNA.mm10.bam
+[bam_sort_core] merging from 0 files and 4 in-memory blocks...
+mm10
+Single species is aligned
+mm10
+processing mm10 part
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.3
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                                                                            ||
+||                           example_RNA.mm10.rigid.reheader.st.bam           ||
+||                                                                            ||
+||             Output file : example_RNA.mm10.feature.count.txt               ||
+||                 Summary : example_RNA.mm10.feature.count.txt.summary       ||
+||              Paired-end : no                                               ||
+||        Count read pairs : no                                               ||
+||              Annotation : mm10.gencode.gtf (GTF)                           ||
+||      Dir for temp files : ./                                               ||
+||      Assignment details : <input_file>.featureCounts.bam                   ||
+||                      (Note that files are saved to the output directory)   ||
+||                                                                            ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||      Multimapping reads : counted                                          ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file mm10.gencode.gtf ...                                  ||
+||    Features : 843402                                                       ||
+||    Meta-features : 55291                                                   ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file example_RNA.mm10.rigid.reheader.st.bam...                 ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 10240                                                ||
+||    Successfully assigned alignments : 2681 (26.2%)                         ||
+||    Running time : 0.00 minutes                                             ||
+||                                                                            ||
+|| Write the final count table.                                               ||
+|| Write the read assignment summary.                                         ||
+||                                                                            ||
+|| Summary of counting results can be found in file "example_RNA.mm10.featur  ||
+|| e.count.txt.summary"                                                       ||
+||                                                                            ||
+\\============================================================================//
+
+
+        ==========     _____ _    _ ____  _____  ______          _____  
+        =====         / ____| |  | |  _ \|  __ \|  ____|   /\   |  __ \ 
+          =====      | (___ | |  | | |_) | |__) | |__     /  \  | |  | |
+            ====      \___ \| |  | |  _ <|  _  /|  __|   / /\ \ | |  | |
+              ====    ____) | |__| | |_) | | \ \| |____ / ____ \| |__| |
+        ==========   |_____/ \____/|____/|_|  \_\______/_/    \_\_____/
+	  v2.0.3
+
+//========================== featureCounts setting ===========================\\
+||                                                                            ||
+||             Input files : 1 BAM file                                       ||
+||                                                                            ||
+||                           example_RNA.mm10.exon.featureCounts.bam          ||
+||                                                                            ||
+||             Output file : example_RNA.mm10.feature.count.txt               ||
+||                 Summary : example_RNA.mm10.feature.count.txt.summary       ||
+||              Paired-end : no                                               ||
+||        Count read pairs : no                                               ||
+||              Annotation : mm10.gencode.gtf (GTF)                           ||
+||      Dir for temp files : ./                                               ||
+||      Assignment details : <input_file>.featureCounts.bam                   ||
+||                      (Note that files are saved to the output directory)   ||
+||                                                                            ||
+||                                                                            ||
+||                 Threads : 16                                               ||
+||                   Level : meta-feature level                               ||
+||      Multimapping reads : counted                                          ||
+|| Multi-overlapping reads : not counted                                      ||
+||   Min overlapping bases : 1                                                ||
+||                                                                            ||
+\\============================================================================//
+
+//================================= Running ==================================\\
+||                                                                            ||
+|| Load annotation file mm10.gencode.gtf ...                                  ||
+||    Features : 55401                                                        ||
+||    Meta-features : 55291                                                   ||
+||    Chromosomes/contigs : 22                                                ||
+||                                                                            ||
+|| Process BAM file example_RNA.mm10.exon.featureCounts.bam...                ||
+||    Single-end reads are included.                                          ||
+||    Total alignments : 10240                                                ||
+||    Successfully assigned alignments : 7625 (74.5%)                         ||
+||    Running time : 0.00 minutes                                             ||
+||                                                                            ||
+|| Write the final count table.                                               ||
+|| Write the read assignment summary.                                         ||
+||                                                                            ||
+|| Summary of counting results can be found in file "example_RNA.mm10.featur  ||
+|| e.count.txt.summary"                                                       ||
+||                                                                            ||
+\\============================================================================//
+
+[bam_sort_core] merging from 0 files and 16 in-memory blocks...
+Allow 1 mismatch for UMIs
+total reads: 2306
+total dup reads: 274
+9.9e-05 min consumed
+count unfiltered reads
+[1] "P5: P1.05; P7: P2.04"
+# A tibble: 6 x 7
+  P5    P7    R1     R2     R3     Barcode                          Count
+  <chr> <chr> <chr>  <chr>  <chr>  <chr>                            <int>
+1 P1.05 P2.04 R1.041 R2.017 R3.032 R1.041,R2.017,R3.032,P1.05,P2.04     6
+2 P1.05 P2.04 R1.002 R2.066 R3.042 R1.002,R2.066,R3.042,P1.05,P2.04     5
+3 P1.05 P2.04 R1.008 R2.023 R3.090 R1.008,R2.023,R3.090,P1.05,P2.04     5
+4 P1.05 P2.04 R1.021 R2.006 R3.095 R1.021,R2.006,R3.095,P1.05,P2.04     5
+5 P1.05 P2.04 R1.027 R2.051 R3.033 R1.027,R2.051,R3.033,P1.05,P2.04     5
+6 P1.05 P2.04 R1.031 R2.068 R3.061 R1.031,R2.068,R3.061,P1.05,P2.04     5
+[1] "Finished counting for example_RNA.mm10.wdup.RG.freq.bed"
+count filtered reads
+[1] "P5: P1.05; P7: P2.04"
+# A tibble: 6 x 7
+  P5    P7    R1     R2     R3     Barcode                          Count
+  <chr> <chr> <chr>  <chr>  <chr>  <chr>                            <int>
+1 P1.05 P2.04 R1.003 R2.040 R3.035 R1.003,R2.040,R3.035,P1.05,P2.04     4
+2 P1.05 P2.04 R1.006 R2.036 R3.003 R1.006,R2.036,R3.003,P1.05,P2.04     4
+3 P1.05 P2.04 R1.026 R2.004 R3.066 R1.026,R2.004,R3.066,P1.05,P2.04     4
+4 P1.05 P2.04 R1.031 R2.068 R3.061 R1.031,R2.068,R3.061,P1.05,P2.04     4
+5 P1.05 P2.04 R1.037 R2.068 R3.051 R1.037,R2.068,R3.051,P1.05,P2.04     4
+6 P1.05 P2.04 R1.038 R2.025 R3.029 R1.038,R2.025,R3.029,P1.05,P2.04     4
+[1] "Finished counting for example_RNA.mm10.rmdup.RG.freq.bed"
+@ 2026-02-06 09:51:00: Read BED file (reference gene model) ...
+@ 2026-02-06 09:51:00: Total 5000 transcripts loaded
+@ 2026-02-06 09:51:00: Get BAM file(s) ...
+	./example_RNA.mm10.temp.bam
+@ 2026-02-06 09:51:00: Processing example_RNA.mm10.temp.bam ...
+	100 transcripts finished 	200 transcripts finished 	300 transcripts finished 	400 transcripts finished 	500 transcripts finished 	600 transcripts finished 	700 transcripts finished 	800 transcripts finished 	900 transcripts finished 	1000 transcripts finished 	1100 transcripts finished 	1200 transcripts finished 	1300 transcripts finished 	1400 transcripts finished 	1500 transcripts finished 	1600 transcripts finished 	1700 transcripts finished 	1800 transcripts finished 	1900 transcripts finished 	2000 transcripts finished 	2100 transcripts finished 	2200 transcripts finished 	2300 transcripts finished 	2400 transcripts finished 	2500 transcripts finished 	2600 transcripts finished 	2700 transcripts finished 	2800 transcripts finished 	2900 transcripts finished 	3000 transcripts finished 	3100 transcripts finished 	3200 transcripts finished 	3300 transcripts finished 	3400 transcripts finished 	3500 transcripts finished 	3600 transcripts finished 	3700 transcripts finished 	3800 transcripts finished 	3900 transcripts finished 	4000 transcripts finished 	4100 transcripts finished 	4200 transcripts finished 	4300 transcripts finished 	4400 transcripts finished 	4500 transcripts finished 	4600 transcripts finished 	4700 transcripts finished 
+
+
+	Sample	Skewness
+	example_RNA.mm10.temp	1.437904450980487
+@ 2026-02-06 09:51:13: Running R script ...
+null device 
+          1 
+processing /mnt/Scripts/SHARE-seq-alignment/genomeBed//mm10.UCSC_RefSeq.bed ... Done
+processing ./example_RNA.mm10.temp.bam ... Finished
+
+[1] 4260
+           Group Tag_count   Tag_perc
+1      CDS_Exons       383  8.9906103
+2    5'UTR_Exons       495 11.6197183
+3    3'UTR_Exons       320  7.5117371
+4        Introns      2747 64.4835681
+5     TSS_up_1kb        14  0.3286385
+6     TSS_up_5kb        55  1.2910798
+7    TSS_up_10kb       112  2.6291080
+8   TES_down_1kb        23  0.5399061
+9   TES_down_5kb        80  1.8779343
+10 TES_down_10kb       203  4.7652582
+11    Intergenic       315  7.3943662
+null device 
+          1 
+[1] "Loading linear gene table..."
+[1] "Finished loading file"
+[1] "Grouping UMIs..."
+Adding missing grouping variables: `V1`, `V2`
+[1] "Converting matrix from long format to wide format..."
+[1] "No. genes x cells = 2966x6428"
+[1] "Writing to .//example_RNA.mm10.gene.bc.matrices.h5"
+[1] "Finished making h5 file for example_RNA.mm10"
+[1] "top10 UMI counts: "
+[1] "Number of Cells that detected > 0 genes:    6428"
+[1] "Number of Cells that detected > 10 genes:   0"
+[1] "Number of Cells that detected > 100 genes:  0"
+[1] "Number of Cells that detected > 500 genes:  0"
+[1] "Number of Cells that detected > 1000 genes: 0"
+[1] "Average mm10 lib size of example_RNA is:"
+[1] 2.527897
+[1] "Plot Libsize, Species mixing etc..."
+RNA pipeline finished
+example_DNA
+/mnt/users/bohan/scripts/Github/Example
+mm10
+process TAPS part
+working dir is: /mnt/users/bohan/scripts/Github/Example/example_DNA
+Using an excessive number of cores has a diminishing return! It is recommended not to exceed 8 cores per trimming process (you asked for 8 cores). Please consider re-specifying
+Path to Cutadapt set as: 'cutadapt' (default)
+Cutadapt seems to be working fine (tested command 'cutadapt --version')
+Cutadapt version: 4.1
+Could not detect version of Python used by Cutadapt from the first line of Cutadapt (but found this: >>>#!/bin/sh<<<)
+Letting the (modified) Cutadapt deal with the Python version instead
+pigz 2.6
+Parallel gzip (pigz) detected. Proceeding with multicore (de)compression using 8 cores
+
+No quality encoding type selected. Assuming that the data provided uses Sanger encoded Phred scores (default)
+
+Output will be written into the directory: /mnt/users/bohan/scripts/Github/Example/example_DNA/trimmed/
+
+
+AUTO-DETECTING ADAPTER TYPE
+===========================
+Attempting to auto-detect adapter type from the first 1 million sequences of the first file (>> /mnt/users/bohan/scripts/Github/Example/example_DNA/example_DNA.R1.fastq.gz <<)
+
+Found perfect matches for the following adapter sequences:
+Adapter type	Count	Sequence	Sequences analysed	Percentage
+Nextera	11465	CTGTCTCTTATA	17059	67.21
+Illumina	0	AGATCGGAAGAGC	17059	0.00
+smallRNA	0	TGGAATTCTCGG	17059	0.00
+Using Nextera adapter for trimming (count: 11465). Second best hit was Illumina (count: 0)
+
+Writing report to '/mnt/users/bohan/scripts/Github/Example/example_DNA/trimmed/example_DNA.R1.fastq.gz_trimming_report.txt'
+
+SUMMARISING RUN PARAMETERS
+==========================
+Input filename: /mnt/users/bohan/scripts/Github/Example/example_DNA/example_DNA.R1.fastq.gz
+Trimming mode: single-end
+Trim Galore version: 0.6.7
+Cutadapt version: 4.1
+Python version: could not detect
+Number of cores used for trimming: 8
+Quality Phred score cutoff: 20
+Quality encoding type selected: ASCII+33
+Adapter sequence: 'CTGTCTCTTATA' (Nextera Transposase sequence; auto-detected)
+Maximum trimming error rate: 0.1 (default)
+Minimum required adapter overlap (stringency): 1 bp
+Minimum required sequence length before a sequence gets removed: 20 bp
+Running FastQC on the data once trimming has completed
+Output file(s) will be GZIP compressed
+
+Cutadapt seems to be fairly up-to-date (version 4.1). Setting -j 8
+Writing final adapter and quality trimmed output to example_DNA.R1_trimmed.fq.gz
+
+
+  >>> Now performing quality (cutoff '-q 20') and adapter trimming in a single pass for the adapter sequence: 'CTGTCTCTTATA' from file /mnt/users/bohan/scripts/Github/Example/example_DNA/example_DNA.R1.fastq.gz <<< 
+This is cutadapt 4.1 with Python 3.9.6
+Command line parameters: -j 8 -e 0.1 -q 20 -O 1 -a CTGTCTCTTATA /mnt/users/bohan/scripts/Github/Example/example_DNA/example_DNA.R1.fastq.gz
+Processing single-end reads on 8 cores ...
+Finished in 0.24 s (14 µs/read; 4.25 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                  17,059
+Reads with adapters:                    13,744 (80.6%)
+Reads written (passing filters):        17,059 (100.0%)
+
+Total basepairs processed:     2,575,909 bp
+Quality-trimmed:                   5,483 bp (0.2%)
+Total written (filtered):      1,694,240 bp (65.8%)
+
+=== Adapter 1 ===
+
+Sequence: CTGTCTCTTATA; Type: regular 3'; Length: 12; Trimmed: 13744 times
+
+Minimum overlap: 1
+No. of allowed errors:
+1-9 bp: 0; 10-12 bp: 1
+
+Bases preceding removed adapters:
+  A: 10.0%
+  C: 43.5%
+  G: 25.9%
+  T: 20.6%
+  none/other: 0.0%
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+1	1182	4264.8	0	1182
+2	376	1066.2	0	376
+3	142	266.5	0	142
+4	74	66.6	0	74
+5	41	16.7	0	41
+6	44	4.2	0	44
+7	41	1.0	0	41
+8	51	0.3	0	51
+9	49	0.1	0	48 1
+10	36	0.0	1	34 2
+11	45	0.0	1	44 1
+12	52	0.0	1	50 2
+13	32	0.0	1	29 3
+14	34	0.0	1	34
+15	49	0.0	1	49
+16	41	0.0	1	41
+17	42	0.0	1	41 1
+18	34	0.0	1	34
+19	55	0.0	1	52 3
+20	66	0.0	1	66
+21	65	0.0	1	64 1
+22	158	0.0	1	156 2
+23	50	0.0	1	48 2
+24	146	0.0	1	140 6
+25	64	0.0	1	61 3
+26	59	0.0	1	59
+27	79	0.0	1	74 5
+28	56	0.0	1	55 1
+29	55	0.0	1	54 1
+30	48	0.0	1	48
+31	60	0.0	1	58 2
+32	111	0.0	1	107 4
+33	66	0.0	1	66
+34	66	0.0	1	66
+35	73	0.0	1	71 2
+36	51	0.0	1	51
+37	71	0.0	1	69 2
+38	69	0.0	1	69
+39	88	0.0	1	87 1
+40	73	0.0	1	72 1
+41	84	0.0	1	82 2
+42	81	0.0	1	80 1
+43	81	0.0	1	79 2
+44	76	0.0	1	76
+45	70	0.0	1	69 1
+46	102	0.0	1	99 3
+47	78	0.0	1	74 4
+48	181	0.0	1	179 2
+49	69	0.0	1	69
+50	97	0.0	1	94 3
+51	80	0.0	1	79 1
+52	89	0.0	1	89
+53	87	0.0	1	85 2
+54	84	0.0	1	82 2
+55	90	0.0	1	88 2
+56	97	0.0	1	97
+57	105	0.0	1	102 3
+58	94	0.0	1	93 1
+59	124	0.0	1	124
+60	94	0.0	1	93 1
+61	94	0.0	1	92 2
+62	95	0.0	1	95
+63	82	0.0	1	79 3
+64	116	0.0	1	115 1
+65	93	0.0	1	90 3
+66	104	0.0	1	103 1
+67	117	0.0	1	117
+68	97	0.0	1	95 2
+69	115	0.0	1	115
+70	102	0.0	1	99 3
+71	117	0.0	1	117
+72	132	0.0	1	128 4
+73	111	0.0	1	106 5
+74	121	0.0	1	120 1
+75	111	0.0	1	108 3
+76	121	0.0	1	120 1
+77	127	0.0	1	127
+78	114	0.0	1	114
+79	108	0.0	1	106 2
+80	122	0.0	1	122
+81	127	0.0	1	125 2
+82	144	0.0	1	144
+83	123	0.0	1	120 3
+84	141	0.0	1	132 9
+85	140	0.0	1	138 2
+86	147	0.0	1	143 4
+87	187	0.0	1	183 4
+88	154	0.0	1	151 3
+89	133	0.0	1	130 3
+90	139	0.0	1	136 3
+91	139	0.0	1	135 4
+92	130	0.0	1	128 2
+93	141	0.0	1	139 2
+94	182	0.0	1	179 3
+95	184	0.0	1	178 6
+96	166	0.0	1	165 1
+97	177	0.0	1	172 5
+98	171	0.0	1	169 2
+99	142	0.0	1	141 1
+100	179	0.0	1	176 3
+101	143	0.0	1	139 4
+102	173	0.0	1	171 2
+103	171	0.0	1	168 3
+104	194	0.0	1	193 1
+105	194	0.0	1	191 3
+106	210	0.0	1	205 5
+107	208	0.0	1	205 3
+108	212	0.0	1	209 3
+109	185	0.0	1	180 5
+110	135	0.0	1	130 5
+111	130	0.0	1	127 3
+112	109	0.0	1	109
+113	82	0.0	1	79 3
+114	56	0.0	1	55 1
+115	45	0.0	1	45
+116	29	0.0	1	27 2
+117	14	0.0	1	12 2
+118	24	0.0	1	24
+119	14	0.0	1	14
+120	11	0.0	1	11
+121	10	0.0	1	10
+122	12	0.0	1	12
+123	23	0.0	1	22 1
+124	15	0.0	1	15
+125	8	0.0	1	8
+126	12	0.0	1	12
+127	8	0.0	1	8
+128	11	0.0	1	10 1
+129	5	0.0	1	5
+130	10	0.0	1	9 1
+131	11	0.0	1	11
+132	22	0.0	1	22
+133	5	0.0	1	5
+134	6	0.0	1	6
+135	9	0.0	1	8 1
+136	9	0.0	1	9
+137	14	0.0	1	13 1
+138	4	0.0	1	3 1
+139	6	0.0	1	5 1
+140	1	0.0	1	1
+141	6	0.0	1	6
+142	31	0.0	1	31
+143	34	0.0	1	32 2
+144	3	0.0	1	3
+145	4	0.0	1	3 1
+147	5	0.0	1	4 1
+148	14	0.0	1	14
+149	3	0.0	1	3
+151	2	0.0	1	2
+
+RUN STATISTICS FOR INPUT FILE: /mnt/users/bohan/scripts/Github/Example/example_DNA/example_DNA.R1.fastq.gz
+=============================================
+17059 sequences processed in total
+Sequences removed because they became shorter than the length cutoff of 20 bp:	180 (1.1%)
+
+
+  >>> Now running FastQC on the data <<<
+
+Started analysis of example_DNA.R1_trimmed.fq.gz
+Approx 5% complete for example_DNA.R1_trimmed.fq.gz
+Approx 10% complete for example_DNA.R1_trimmed.fq.gz
+Approx 15% complete for example_DNA.R1_trimmed.fq.gz
+Approx 20% complete for example_DNA.R1_trimmed.fq.gz
+Approx 25% complete for example_DNA.R1_trimmed.fq.gz
+Approx 35% complete for example_DNA.R1_trimmed.fq.gz
+Approx 40% complete for example_DNA.R1_trimmed.fq.gz
+Approx 45% complete for example_DNA.R1_trimmed.fq.gz
+Approx 50% complete for example_DNA.R1_trimmed.fq.gz
+Approx 55% complete for example_DNA.R1_trimmed.fq.gz
+Approx 65% complete for example_DNA.R1_trimmed.fq.gz
+Approx 70% complete for example_DNA.R1_trimmed.fq.gz
+Approx 75% complete for example_DNA.R1_trimmed.fq.gz
+Approx 80% complete for example_DNA.R1_trimmed.fq.gz
+Approx 85% complete for example_DNA.R1_trimmed.fq.gz
+Approx 90% complete for example_DNA.R1_trimmed.fq.gz
+Analysis complete for example_DNA.R1_trimmed.fq.gz
+[bam_sort_core] merging from 0 files and 4 in-memory blocks...
+Genomes2 is  mm10
+mm10
+Extract DNA methylation info, skip extracting DNA methylation
+Generate bedgraph
+TAPS pipeline finished
+process ATAC part
+add barcode information to each line of read
+chr1 chr10 chr11 chr12 chr13 chr14 chr15 chr16 chr17 chr18 chr19 chr2 chr3 chr4 chr5 chr6 chr7 chr8 chr9 chrM chrX chrY
+[bam_sort_core] merging from 0 files and 16 in-memory blocks...
+[bam_sort_core] merging from 0 files and 16 in-memory blocks...
+count unfiltered reads
+[1] "P5: P1.04; P7: P2.04"
+# A tibble: 6 x 7
+  P5    P7    R1     R2     R3     Barcode                          Count
+  <chr> <chr> <chr>  <chr>  <chr>  <chr>                            <int>
+1 P1.04 P2.04 R1.056 R2.092 R3.020 R1.056,R2.092,R3.020,P1.04,P2.04    44
+2 P1.04 P2.04 R1.079 R2.053 R3.045 R1.079,R2.053,R3.045,P1.04,P2.04    37
+3 P1.04 P2.04 R1.055 R2.074 R3.003 R1.055,R2.074,R3.003,P1.04,P2.04    35
+4 P1.04 P2.04 R1.093 R2.017 R3.078 R1.093,R2.017,R3.078,P1.04,P2.04    35
+5 P1.04 P2.04 R1.049 R2.090 R3.053 R1.049,R2.090,R3.053,P1.04,P2.04    31
+6 P1.04 P2.04 R1.094 R2.080 R3.085 R1.094,R2.080,R3.085,P1.04,P2.04    30
+[1] "Finished counting for example_DNA.mm10.wdup.RG.freq.bed"
+count filtered reads
+[1] "P5: P1.04; P7: P2.04"
+# A tibble: 6 x 7
+  P5    P7    R1     R2     R3     Barcode                          Count
+  <chr> <chr> <chr>  <chr>  <chr>  <chr>                            <int>
+1 P1.04 P2.04 R1.056 R2.092 R3.020 R1.056,R2.092,R3.020,P1.04,P2.04    38
+2 P1.04 P2.04 R1.055 R2.074 R3.003 R1.055,R2.074,R3.003,P1.04,P2.04    33
+3 P1.04 P2.04 R1.079 R2.053 R3.045 R1.079,R2.053,R3.045,P1.04,P2.04    33
+4 P1.04 P2.04 R1.093 R2.017 R3.078 R1.093,R2.017,R3.078,P1.04,P2.04    31
+5 P1.04 P2.04 R1.049 R2.090 R3.053 R1.049,R2.090,R3.053,P1.04,P2.04    29
+6 P1.04 P2.04 R1.094 R2.080 R3.085 R1.094,R2.080,R3.085,P1.04,P2.04    27
+[1] "Finished counting for example_DNA.mm10.rmdup.RG.freq.bed"
+Remove low counts barcode combination
+[1] "Average mm10 lib size of example_DNA is:"
+[1] 19.8311
+[1] "Plot Libsize, Species mixing etc..."
+pipeline ATAC finished

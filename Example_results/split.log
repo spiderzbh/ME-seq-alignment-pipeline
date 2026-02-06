@@ -1,0 +1,96 @@
+Read1 before filtering:
+total reads: 250000
+total bases: 2500000
+Q20 bases: 2453962(98.1585%)
+Q30 bases: 2296023(91.8409%)
+
+Read1 after filtering:
+total reads: 250000
+total bases: 2500000
+Q20 bases: 2453962(98.1585%)
+Q30 bases: 2296023(91.8409%)
+
+Filtering result:
+reads passed filter: 250000
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+
+Duplication rate (may be overestimated since this is SE data): 99.5932%
+
+JSON report: fastp.json
+HTML report: fastp.html
+
+fastp -i /mnt/users/bohan/scripts/Github/Example/I1.1.fastq.gz -o /mnt/users/bohan/scripts/Github/Example/smallfastqs/1.Undetermined.I1.fastq.gz -S 1000000 --thread 1 -d 4 -A -G -L -Q 
+fastp v0.23.2, time used: 2 seconds
+Read1 before filtering:
+total reads: 250000
+total bases: 6000000
+Q20 bases: 5861723(97.6954%)
+Q30 bases: 5512385(91.8731%)
+
+Read1 after filtering:
+total reads: 250000
+total bases: 6000000
+Q20 bases: 5861723(97.6954%)
+Q30 bases: 5512385(91.8731%)
+
+Filtering result:
+reads passed filter: 250000
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+
+Duplication rate (may be overestimated since this is SE data): 98.492%
+
+JSON report: fastp.json
+HTML report: fastp.html
+
+fastp -i /mnt/users/bohan/scripts/Github/Example/I2.1.fastq.gz -o /mnt/users/bohan/scripts/Github/Example/smallfastqs/1.Undetermined.I2.fastq.gz -S 1000000 --thread 1 -d 4 -A -G -L -Q 
+fastp v0.23.2, time used: 2 seconds
+Read1 before filtering:
+total reads: 250000
+total bases: 37750000
+Q20 bases: 36714533(97.257%)
+Q30 bases: 34631211(91.7383%)
+
+Read1 after filtering:
+total reads: 250000
+total bases: 37750000
+Q20 bases: 36714533(97.257%)
+Q30 bases: 34631211(91.7383%)
+
+Filtering result:
+reads passed filter: 250000
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+
+Duplication rate (may be overestimated since this is SE data): 16.4516%
+
+JSON report: fastp.json
+HTML report: fastp.html
+
+fastp -i /mnt/users/bohan/scripts/Github/Example/R2.1.fastq.gz -o /mnt/users/bohan/scripts/Github/Example/smallfastqs/1.Undetermined.R2.fastq.gz -S 1000000 --thread 1 -d 4 -A -G -L -Q 
+fastp v0.23.2, time used: 3 seconds
+Read1 before filtering:
+total reads: 250000
+total bases: 37750000
+Q20 bases: 36972610(97.9407%)
+Q30 bases: 35296855(93.5016%)
+
+Read1 after filtering:
+total reads: 250000
+total bases: 37750000
+Q20 bases: 36972610(97.9407%)
+Q30 bases: 35296855(93.5016%)
+
+Filtering result:
+reads passed filter: 250000
+reads failed due to low quality: 0
+reads failed due to too many N: 0
+
+Duplication rate (may be overestimated since this is SE data): 21.73%
+
+JSON report: fastp.json
+HTML report: fastp.html
+
+fastp -i /mnt/users/bohan/scripts/Github/Example/R1.1.fastq.gz -o /mnt/users/bohan/scripts/Github/Example/smallfastqs/1.Undetermined.R1.fastq.gz -S 1000000 --thread 1 -d 4 -A -G -L -Q 
+fastp v0.23.2, time used: 3 seconds
