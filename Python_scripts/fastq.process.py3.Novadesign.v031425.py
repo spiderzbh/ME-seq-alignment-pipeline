@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Author: Sai Ma
+# Author: Sai Ma and Bohan Zhu
 # The following program will process the fastq
 # handle QC vs full & modify fastq header & split fastqs & add index & trim & split project
 # example python3 /mnt/users/sai/Script/Split-seq_Sai/fastq.process.py3.py -a Undetermined_S0_R1_001.fastq.gz -b Undetermined_S0_R2_001.fastq.gz --qc -y /mnt/users/sai/Script/Split-seq_Sai/config_test.yaml
